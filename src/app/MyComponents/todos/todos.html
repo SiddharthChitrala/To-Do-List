@@ -1,0 +1,56 @@
+<style>
+    .todo-list {
+
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        padding: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .add-todo {
+        max-width: 700px;
+        margin: 30px auto;
+        padding: 20px;
+        width: 100%;
+        display: flexbox;
+        margin-bottom: 20px;
+        box-shadow: 0px 2px 8px rgba(44, 62, 80, 0.2);
+        border-color: #2c3e50;
+        border-radius: 20px;
+        transition: box-shadow 0.3s ease;
+    }
+    .add-todo:hover {
+        box-shadow: 0px 6px 20px rgba(44, 62, 80, 0.35);
+    }
+</style>
+
+<div class="container-fluid">
+
+<div class="add-todo">
+        <app-add-todo (todoAdd)="addTodo($event)"></app-add-todo>
+</div>
+
+<div id="todo-list-header" style="margin-bottom: 20px;">
+    <h4 class="text-center" style="font-weight: bold; color: #2c3e50;">Your Todo List</h4>
+    <hr style="border-top: 2px solid #3498db; width: 60%; margin: 10px auto;">
+</div>
+
+<div *ngIf="todos && todos.length > 0; else noTodos">
+    <div class="todo-list">
+        <div *ngFor="let todo of todos">
+            <app-todo-item [todo]="todo" (todoDelete)="deleteTodo($event)" (todoCheckBox)="CheckBoxTodo($event)">
+            </app-todo-item>
+        </div>
+    </div>
+</div>
+<ng-template #noTodos>
+    <div class="text-center" style="color: #888; margin: 40px 0;">
+        <p>No todos found. Add a new todo to get started!</p>
+    </div>
+</ng-template>
+
+
+</div>

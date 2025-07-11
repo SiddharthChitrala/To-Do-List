@@ -1,0 +1,37 @@
+<style>
+    .add-todo-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #343a40;
+        width: 100%;
+    }
+
+    .form-section {
+        flex: 1;
+    }
+
+    .form-label {
+        color: #495057;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
+</style>
+<div id="add-todo">
+    <div class="form-section">
+        <h2 class="add-todo-title">Add ToDo</h2>
+        <form id="add-todo-form" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+                <label for="title" class="form-label" >Title</label>
+                <input type="text" class="form-control" id="title" [(ngModel)]="title" name="title" placeholder="Enter todo title">
+            </div>
+            <div class="mb-3">
+                <label for="desc" class="form-label">Description</label>
+                <textarea class="form-control" id="desc" rows="3" [(ngModel)]="desc" name="desc" placeholder="Enter todo description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-submit" id="submitBtn">Add ToDo</button>
+        </form>
+    </div>
+</div>
