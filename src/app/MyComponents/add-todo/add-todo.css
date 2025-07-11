@@ -1,0 +1,19 @@
+    .add-todo-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+        color: #343a40;
+        width: 100%;
+    }
+
+    .form-section {
+        flex: 1;
+    }
+
+    .form-label {
+        color: #495057;
+    }
+
+    .btn-submit {
+        width: 100%;
+    }
